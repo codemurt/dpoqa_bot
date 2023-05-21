@@ -6,4 +6,3 @@ transformers
 faiss-cpu
 torch
 numpy
-pickle
