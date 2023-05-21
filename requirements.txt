@@ -1,0 +1,9 @@
+fastapi
+aiogram
+gunicorn
+uvicorn
+transformers
+faiss-cpu
+torch
+numpy
+pickle
