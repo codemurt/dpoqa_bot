@@ -84,10 +84,10 @@ async def main_handler(message: types.Message):
         user_id = message.from_user.id
         user_full_name = message.from_user.full_name
         logging.info(f'Main: {user_id} {user_full_name} {time.asctime()}. Message: {message}')
-        results = semantic_search(str(message), index, question_embeddings, k=1)
+        results = semantic_search(str(message.text), index, question_embeddings, k=1)
         await message.reply("Мы нашли наиболее близкий вопрос:\n" + str(results[0][1]) + "\nОтвет:\n" + results[0][2])        
     except:
-        logging.info(f'Main: {user_id} {user_full_name} {time.asctime()}. Message: {message}. LAST ERROR. AHTUNG! AAAAAA')
+        logging.info(f'Main: {user_id} {user_full_name} {time.asctime()}. Message: {message}.')
         await message.reply("Что-то пошло не так...")    
 
 # Process updates from webhook
